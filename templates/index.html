@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% block textcon %}
+
+<!-- SEO Analyzer Section -->
+<section id="seo-analyzer" class="seo-analyzer section">
+    <div class="container text-center" data-aos="fade-up">
+        <h2 class="section-title">SEO Keyword Analyzer</h2>
+        <p class="section-subtitle">Enter a URL to extract SEO-related details.</p>
+    </div>
+
+    <div class="container">
+        <!-- Input Form -->
+        <div class="card shadow-lg p-4 mb-5 bg-white rounded">
+            <h3 class="text-center mb-3">Enter a URL</h3>
+            <form action="#seo-analyzer" method="POST" class="text-center">
+                <div class="input-group mb-3" style="max-width: 700px; margin: auto;">
+                    <input type="text" name="url" id="searchInput" class="form-control form-control-lg"
+                        placeholder="Enter URL (e.g., https://example.com)" required>
+                    <button class="btn btn-warning btn-lg px-4" type="submit">Analyze</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Output Section -->
+        {% if text %}
+        <div class="card shadow-lg p-4 bg-light">
+            <h3 class="text-center mb-3">SEO Analysis Result</h3>
+            <div class="output-content">
+                <div class="mb-3">
+                    <h4 class="text-primary">Page Title:</h4>
+                    <p class="text-dark" style="font-size: 18px;">{{ text }}</p>
+                </div>
+                <div class="mb-3">
+                    <h4 class="text-primary">Meta Description:</h4>
+                    <p class="text-dark" style="font-size: 18px;">{{ description }}</p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</section>
+<!-- End SEO Analyzer Section -->
+
+{% endblock textcon %}
